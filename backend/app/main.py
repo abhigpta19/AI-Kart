@@ -41,8 +41,7 @@ app.add_middleware(
 
 @app.post("/spam/predict")
 async def get_prediction(email: Email):
-    # email_features = get_email_features(email.text, settings.words, settings.characters).reshape(1, -1)
-    generated_text = generate_text('suraj/', email.text, max_length=50)  # Generate text using the function  
+    generated_text = generate_text('suraj/', email.text, max_length=50)  
     return {'label': generated_text } 
 
 
