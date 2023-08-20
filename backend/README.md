@@ -1,14 +1,20 @@
 # Backend
+
 This is the backend for the project using FastAPI. It is simple API containing a single endpoint that returns a classification for a given email.
 
-
 ## Project Setup
+please ensure that pip is installed in the system along with the latest version of python or python3
 
 ### Install dependencies
 
 ```sh
 pip install -r requirements.txt
 ```
+
+### Download the model
+As the model is too large in size download the model from the link below and paste this model directory inside the backend folder
+[Link] :- https://drive.google.com/drive/folders/1aDBNMtKP1PRlChkKMNE0s5nfdEPXHkmA?usp=drive_link
+
 
 ### Run the server
 
@@ -17,26 +23,21 @@ uvicorn app.main:app --reload
 ```
 
 ### Train the model
-In order to train the model, you need to download the dataset from [here](https://archive.ics.uci.edu/ml/datasets/Spambase) and create a folder called `spambase` in the root directory of the repository. Then, place the `spambase.data` and `spambase.names` files in the `spambase` directory.
 
-Then, run the following command:
+
 ```sh
-python ./app/models/ml/train.py
+python ./app/train.py
 ```
 
-## API
-### Predict Spam
-| Method | Endpoint      | Description    |
-|--------|---------------|----------------|
-| POST   | /spam/predict | Get Prediction |
+### Running AI interface on gradio
 
-#### Parameters
-No parameters
-#### Request Body
-| Name | Type   | Description                |
-|------|--------|----------------------------|
-| text | string | The email text to classify |
-#### Response
-| Name  | Type   | Description                                      |
-|-------|--------|--------------------------------------------------|
-| label | string | The predicted label, either `spam` or `not spam` |
+Steps for running the AI-Kart Interface
+
+1> Download the model files that are available in the presentation or from here
+[Link] :- https://drive.google.com/drive/folders/1aDBNMtKP1PRlChkKMNE0s5nfdEPXHkmA 
+
+2> Change the 'model1_path' to the local path where the previous downloaded model is stored.
+
+3> Run this IPYNB note book on Google Colab (preferable) or Jupyter Notebook and the AI kart interface will automaticall be generated.
+
+

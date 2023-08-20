@@ -16,7 +16,7 @@ from app.utils import *
 
 
 class Settings(BaseSettings):
-    model_path: str = 'suraj/'
+    model_path: str = 'model/'
     words = []
     characters = []
 
@@ -41,7 +41,7 @@ app.add_middleware(
 
 @app.post("/spam/predict")
 async def get_prediction(email: Email):
-    generated_text = generate_text('suraj/', email.text, max_length=50)  
+    generated_text = generate_text('model/', email.text, max_length=50)  
     return {'label': generated_text } 
 
 
